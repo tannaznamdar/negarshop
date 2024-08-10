@@ -1,6 +1,6 @@
 <template>
   <div class="category-card">
-    <router-link :to='{ name: "" }'>
+    <router-link :to='{ name: link }'>
       <figure class="category-card-img">
         <img alt="#" :src="thumbnail">
       </figure>
@@ -21,13 +21,9 @@ export default {
   name: 'MiniCart',
 
   props: {
-    slug: {
-      type: String,
-      default: ''
-    },
     link: {
       type: String,
-      default: ''
+      default: 'homePageRoute'
     },
     thumbnail: {
       type: String,

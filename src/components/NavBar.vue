@@ -1,10 +1,4 @@
-<script setup>
-import { useRoute } from 'vue-router'
-const location = useRoute();
-</script>
-
 <template>
-
   <div class="wrapper">
     <header>
       <div class="container">
@@ -188,7 +182,7 @@ const location = useRoute();
                     <router-link class="active" :to='{ name: "childPageRoute" }'> کودک و نوزاد </router-link>
                   </li>
 
-                  
+
 
                 </ul>
               </nav>

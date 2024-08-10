@@ -64,37 +64,43 @@ export default {
         {
           title: 'کالای دیجیتال',
           subtitle: '+22 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-1-1.jpg'
-
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-1-1.jpg',
+          link: 'digitalPageRoute'
         },
         {
           title: 'سویشرت و هودی',
           subtitle: '+5 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-5.jpg'
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-5.jpg',
+          link: 'fashionPageRoute'
         },
         {
           title: 'کفش ورزشی',
           subtitle: '+18 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-3.jpg'
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-3.jpg',
+          link: 'fashionPageRoute'
         },
         {
           title: 'نوزاد',
           subtitle: '+2 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-6.jpg'
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-6.jpg',
+          link: 'childPageRoute'
         }, {
           title: 'اسباب بازی',
           subtitle: '+10 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-4.jpg'
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-4.jpg',
+          link: 'childPageRoute'
         },
         {
           title: 'لوازم آرایشی',
           subtitle: '+22 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-7.jpg'
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-7.jpg',
+          link: 'cosmeticsPageRoute'
         },
         {
           title: 'لپتاپ',
           subtitle: '+22 محصول',
-          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-8.jpg'
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/icon-8.jpg',
+          link: 'digitalPageRoute'
         }
       ]
     }
