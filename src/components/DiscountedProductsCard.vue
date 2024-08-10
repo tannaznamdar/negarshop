@@ -1,6 +1,6 @@
 <template>
     <article class="product-card">
-        <router-link>
+        <router-link :to='{ name: "productPageRoute", params: { slug } }'>
             <div class="product-card-thumbnail">
                 <figure class="card-img">
                     <img alt="#" :src="thumbnail">
@@ -24,6 +24,10 @@ export default {
     name: 'DiscountedProductsCard',
 
     props: {
+        slug: {
+            type: String,
+            default: ''
+        },
         link: {
             type: String,
             default: 'homePageRoute'

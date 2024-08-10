@@ -161,45 +161,52 @@ export default {
           title: 'گوشی موبایل اپل مدل iPhone 13 Pro ظرفیت 256GB دو سیم کارت',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/note-20-ultra-300x300.jpg',
-          link: ''
+          link: 'thumbnail',
+          slug: 'iPhone-13-Pro',
+
         },
         {
           title: 'گوشی موبایل اپل مدل iPhone 13 ظرفیت 128GB دو سیم کارت  ',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/iphone-13-1-300x300.jpg',
-          link: ''
+          link: 'thumbnail',
+          slug: 'iPhone-13',
         },
         {
           title: 'گوشی موبایل اپل مدل iPhone 13 Pro ظرفیت 256GB دو سیم کارت',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/iphone-13-pro-1-300x300.jpg',
-          link: ''
+          link: 'thumbnail',
+          slug: 'iPhone-13-Pro',
         },
         {
-          title: 'گوشی موبایل سامسونگ مدل S20 FE 5G رم 8GB حافظه داخلی 128GB دو سیم کارته',
+          title: 'گوشی سامسونگ مدل S20 رم 8GB حافظه داخلی 128GB ',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/s20-fe-300x300.jpg',
-          link: ''
+          link: 'thumbnail',
+          slug: 'سامسونگ-s20',
         },
         {
           title: 'گوشی موبایل اپل مدل iPhone 13 Pro ظرفیت 256GB دو سیم کارت',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/note-20-ultra-300x300.jpg',
-          link: ''
+          link: 'thumbnail',
+          slug: 'galaxy-note-20',
         },
         {
           title: 'گوشی موبایل اپل مدل iPhone 13 ظرفیت 128GB دو سیم کارت  ',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/iphone-13-1-300x300.jpg',
-          link: ''
+          link: 'thumbnail',
+          slug: 'iPhone-13',
         },
         {
           title: 'گوشی موبایل اپل مدل iPhone 13 Pro ظرفیت 256GB دو سیم کارت',
           subtitle: ' ۴۲,۰۰۰,۰۰۰',
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/iphone-13-pro-1-300x300.jpg',
-          link: ''
-        },
-
+          link: 'thumbnail',
+          slug: 'iPhone-13-Pro',
+        }
       ]
     }
   }

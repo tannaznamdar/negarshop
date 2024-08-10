@@ -8,6 +8,7 @@ import Tools from "@/views/ToolsPage.vue";
 import HomeSupplies from "@/views/HomeSuppliesPage.vue";
 import Fav from "@/views/FavPage.vue";
 import Child from "@/views/ChildPage.vue";
+import Product from "@/views/ProductPage.vue";
 
 
 const router = createRouter({
@@ -22,7 +23,7 @@ const router = createRouter({
     { path: "/product-category/خانه-آشپزخانه/:slug?", name: 'homeSuppliesPageRoute', component: HomeSupplies },
     { path: "/product-category/کودک-نوزاد", name: 'childPageRoute', component: Child },
     { path: "/negarshop/my-account/negar-favs", name: 'favPageRoute', component: Fav },
-
+    { path: "/Product/:slug", name: 'productPageRoute', component: Product },
     { path: "/:catchAll(.*)", redirect: '/' }
   ],
 
