@@ -1,16 +1,18 @@
 <template>
-  <div class="category-card">
+  <article class="category-card">
     <router-link :to='{ name: link }'>
-      <figure class="category-card-img">
-        <img alt="#" :src="thumbnail">
-      </figure>
+      <div class="card-thumbnail">
+        <figure class="category-card-img">
+          <img alt="#" :src="thumbnail">
+        </figure>
+      </div>
 
-      <div>
+      <div class="card-content">
         <h4 class="card-title">{{ title }}</h4>
         <span class="card-subtitle">{{ subtitle }}</span>
       </div>
     </router-link>
-  </div>
+  </article>
 </template>
 
 
