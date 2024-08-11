@@ -3,6 +3,8 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import MiniCart from '@/components/MiniCart.vue';
 import DiscountedProductsCard from '@/components/DiscountedProductsCard.vue';
 import ProductCard from '@/components/ProductCard.vue';
+import MediumCard from '@/components/MediumCard.vue'
+
 import { defineComponent } from 'vue';
 
 defineComponent({
@@ -74,7 +76,7 @@ defineComponent({
 
         </div>
       </div>
-    </section> 
+    </section>
 
     <section class="mb-30">
       <header class="section-header d-flex align-items-center justify-content-between mb-20">
@@ -94,6 +96,13 @@ defineComponent({
       </div>
     </section>
 
+    <section class="mb-30">
+      <div class="row">
+        <div class="col-lg-3" v-for="MediumCard in MediumCards">
+          <MediumCard v-bind="MediumCard"></MediumCard>
+        </div>
+      </div>
+    </section>
 
   </div>
 
@@ -272,6 +281,21 @@ export default {
           link: 'thumbnail',
           slug: 'iPhone-13',
         },
+      ],
+
+      MediumCards: [
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/1000003322.jpg',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/1000003456.jpg',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/1000003547.jpg',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/1000003570.jpg',
+        }
       ]
     }
   }
