@@ -3,7 +3,8 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import MiniCart from '@/components/MiniCart.vue';
 import DiscountedProductsCard from '@/components/DiscountedProductsCard.vue';
 import ProductCard from '@/components/ProductCard.vue';
-import MediumCard from '@/components/MediumCard.vue'
+import MediumCard from '@/components/MediumCard.vue';
+import BrandCard from '@/components/BrandCard.vue';
 
 import { defineComponent } from 'vue';
 
@@ -149,6 +150,23 @@ defineComponent({
             <ProductCard v-bind="fashionProduct"></ProductCard>
           </SplideSlide>
         </Splide>
+      </div>
+    </section>
+
+    <section class="mb-30">
+      <div class="row">
+        <div class="carousel-brand d-flex align-items-center">
+
+          <Splide class="row" :options="{
+            arrows: true, pagination: false, direction: 'rtl', type: 'slide', perPage: 7, trimSpace: false, perMove: 1, autoplay: true,
+          }" aria-label="My Favorite Images">
+
+            <SplideSlide v-for="brand in brands">
+              <BrandCard v-bind="brand"></BrandCard>
+            </SplideSlide>
+          </Splide>
+
+        </div>
       </div>
     </section>
 
@@ -451,6 +469,36 @@ export default {
           link: 'thumbnail',
           slug: 'تی-شرت-مردانه-آگرین',
         },
+      ],
+
+      brands: [
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/2315.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1192.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1076.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1078.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1080.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1086.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1078.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1080.png',
+        },
+        {
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/05/1086.png',
+        },
       ]
     }
   }
@@ -529,5 +577,13 @@ export default {
   &:is(:hover, :focus) {
     background-color: #afaeae;
   }
+}
+
+.carousel-brand {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  padding: 30px;
+  overflow: hidden;
 }
 </style>
