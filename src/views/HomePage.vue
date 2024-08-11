@@ -81,7 +81,11 @@ defineComponent({
     <section class="mb-30">
       <header class="section-header d-flex align-items-center justify-content-between mb-20">
         <span class="section-title">جدیدترین محصولات</span>
-        <button class="btn">دیدن همه</button>
+        <button class="btn">
+          <router-link :to='{ name: "shopPageRoute" }'>
+            دیدن همه
+          </router-link>
+        </button>
       </header>
 
       <div class="carousel-content">
@@ -358,32 +362,21 @@ export default {
 }
 
 .btn {
-  font-weight: 500;
-  font-size: 14px;
-  color: #fff;
   background-color: #757575;
   display: inline-block;
   border-radius: 20px;
+  border: none;
+  outline: none;
+
+  a {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+  }
 
   &:is(:hover, :focus) {
     background-color: #afaeae;
   }
-}
-
-.slider-btn {
-  pointer-events: all;
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  line-height: 60px !important;
-  text-align: center;
-  background: #fff !important;
-  font-size: 36px !important;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.2) -10px 0 20px;
-  padding: 0 !important;
-  transition: 0.2s;
-  color: #666 !important;
-  opacity: 0.9;
 }
 </style>
