@@ -108,6 +108,28 @@ defineComponent({
       </div>
     </section>
 
+    <section class="mb-30">
+      <header class="section-header d-flex align-items-center justify-content-between mb-20">
+        <span class="section-title"> لوازم آرایشی و بهداشتی </span>
+        <button class="btn">
+          <router-link :to='{ name: "cosmeticsPageRoute" }'>
+            دیدن همه
+          </router-link>
+        </button>
+      </header>
+
+      <div class="carousel-content">
+        <Splide class="row" :options="{
+          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+        }" aria-label="My Favorite Images">
+
+          <SplideSlide v-for="Cosmetic in Cosmetics">
+            <ProductCard v-bind="Cosmetic"></ProductCard>
+          </SplideSlide>
+        </Splide>
+      </div>
+    </section>
+
   </div>
 
 </template>
@@ -300,6 +322,59 @@ export default {
         {
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2022/06/1000003570.jpg',
         }
+      ],
+
+      Cosmetics: [
+        {
+          title: ' کرم مرطوب کننده سافت نیوا 300 میلی لیتری (100 میل مجانی) ',
+          subtitle: '50,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/st-ives-cream-renewing-688130141601.jpg',
+          link: 'thumbnail',
+          slug: 'کرم-مرطوب-کننده-سافت-نیوا',
+
+        },
+        {
+          title: 'کرم مرطوب کننده نئودرم حاوی ویتامین E و B5 مناسب انواع پوست 50 میل ',
+          subtitle: ' 80,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/limpo-ure-oserin-522130141201_0.jpg',
+          link: 'thumbnail',
+          slug: 'کرم-مرطوب-کننده-نئودرم',
+        },
+        {
+          title: 'ادو پرفیوم زنانه فراگرنس ورد مدل Diva Glamorous Girl حجم 100 میل ',
+          subtitle: ' 700,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/diva-lamoous-girl-332111291308-300x300.jpg',
+          link: 'thumbnail',
+          slug: 'fragrance-world-glamorous-girl-eau-de-parfum-for-women-100ml',
+        },
+        {
+          title: 'موزن گوش و بینی و ابرو فیلیپس مدل NT1700 سری 1000',
+          subtitle: ' 1,200,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/philips-nt1700-220000000004-300x300.jpg',
+          link: 'thumbnail',
+          slug: 'philips-nt1150-nose-trimmer',
+        },
+        {
+          title: ' کرم مرطوب کننده سافت نیوا 300 میلی لیتری (100 میل مجانی) ',
+          subtitle: '60,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/st-ives-cream-renewing-688130141601.jpg',
+          link: 'thumbnail',
+          slug: 'کرم-مرطوب-کننده-سافت-نیوا',
+        },
+        {
+          title: 'ادو پرفیوم زنانه فراگرنس ورد مدل Diva Glamorous Girl حجم 100 میل ',
+          subtitle: ' 800,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/diva-lamoous-girl-332111291308-300x300.jpg',
+          link: 'thumbnail',
+          slug: 'fragrance-world-glamorous-girl-eau-de-parfum-for-women-100ml',
+        },
+        {
+          title: 'موزن گوش و بینی و ابرو فیلیپس مدل NT1700 سری 1000',
+          subtitle: '1,200,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/philips-nt1700-220000000004-300x300.jpg',
+          link: 'thumbnail',
+          slug: 'philips-nt1150-nose-trimmer',
+        },
       ]
     }
   }
