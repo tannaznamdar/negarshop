@@ -108,18 +108,18 @@ export default {
     margin-bottom: 15px;
 
     &:is(:hover, :focus) {
-        color: #CA1B1B;
+        color: #651fff;
     }
 }
 
 .card-subtitle {
     margin-top: 5px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: #666;
     transition: 0.2s;
     white-space: nowrap;
-    color: #CA1B1B;
+    color: #651fff;
 }
 
 .card-img {

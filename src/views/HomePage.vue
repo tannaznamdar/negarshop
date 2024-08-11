@@ -123,8 +123,30 @@ defineComponent({
           arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
         }" aria-label="My Favorite Images">
 
-          <SplideSlide v-for="Cosmetic in Cosmetics">
-            <ProductCard v-bind="Cosmetic"></ProductCard>
+          <SplideSlide v-for="CosmeticProduct in CosmeticProducts">
+            <ProductCard v-bind="CosmeticProduct"></ProductCard>
+          </SplideSlide>
+        </Splide>
+      </div>
+    </section>
+
+    <section class="mb-30">
+      <header class="section-header d-flex align-items-center justify-content-between mb-20">
+        <span class="section-title"> مد و پوشاک روز </span>
+        <button class="btn">
+          <router-link :to='{ name: "fashionPageRoute" }'>
+            دیدن همه
+          </router-link>
+        </button>
+      </header>
+
+      <div class="carousel-content">
+        <Splide class="row" :options="{
+          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+        }" aria-label="My Favorite Images">
+
+          <SplideSlide v-for="fashionProduct in fashionProducts">
+            <ProductCard v-bind="fashionProduct"></ProductCard>
           </SplideSlide>
         </Splide>
       </div>
@@ -324,7 +346,7 @@ export default {
         }
       ],
 
-      Cosmetics: [
+      CosmeticProducts: [
         {
           title: ' کرم مرطوب کننده سافت نیوا 300 میلی لیتری (100 میل مجانی) ',
           subtitle: '50,000',
@@ -374,6 +396,60 @@ export default {
           thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/philips-nt1700-220000000004-300x300.jpg',
           link: 'thumbnail',
           slug: 'philips-nt1150-nose-trimmer',
+        }
+      ],
+
+      fashionProducts: [
+        {
+          title: ' ست هدیه مردانه چرما اسپرت کد KDBE01 ',
+          subtitle: '250,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/08/b48f5dca694042daf30d8422f45d68b575c2d3b8_1628621724-2-300x300.jpg',
+          link: 'thumbnail',
+          slug: 'ست-هدیه-مردانه-چرم ',
+
+        },
+        {
+          title: 'تی شرت مردانه لووین ',
+          subtitle: ' 350,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/11/112870089-300x300.png',
+          link: 'thumbnail',
+          slug: 'تی-شرت-مردانه-لووین ',
+        },
+        {
+          title: 'تی شرت مردانه زرد آگرین ',
+          subtitle: ' 400,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/11/112549996-300x300.png',
+          link: 'thumbnail',
+          slug: 'تی-شرت-مردانه-آگرین',
+        },
+        {
+          title: 'تیشرت مردانه سبز زی ',
+          subtitle: ' 300,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/11/111244826-300x300.png',
+          link: 'thumbnail',
+          slug: 'پولوشرت-مردانه-زی',
+        },
+        {
+          title: ' ست هدیه مردانه چرما اسپرت کد KDBE01 ',
+          subtitle: '250,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/08/b48f5dca694042daf30d8422f45d68b575c2d3b8_1628621724-2-300x300.jpg',
+          link: 'thumbnail',
+          slug: 'ست-هدیه-مردانه-چرم ',
+
+        },
+        {
+          title: 'تی شرت مردانه لووین ',
+          subtitle: ' 350,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/11/112870089-300x300.png',
+          link: 'thumbnail',
+          slug: 'تی-شرت-مردانه-لووین ',
+        },
+        {
+          title: 'تی شرت مردانه زرد آگرین ',
+          subtitle: ' 400,000',
+          thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2019/11/112549996-300x300.png',
+          link: 'thumbnail',
+          slug: 'تی-شرت-مردانه-آگرین',
         },
       ]
     }
