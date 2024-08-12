@@ -5,7 +5,6 @@ import DiscountedProductsCard from '@/components/DiscountedProductsCard.vue';
 import ProductCard from '@/components/ProductCard.vue';
 import MediumCard from '@/components/MediumCard.vue';
 import BrandCard from '@/components/BrandCard.vue';
-
 import { defineComponent } from 'vue';
 
 defineComponent({
@@ -154,24 +153,18 @@ defineComponent({
     </section>
 
     <section class="mb-30">
-      <div class="row">
-        <div class="carousel-brand d-flex align-items-center">
+      <div class="carousel-brand">
+        <Splide class="row" :options="{
+          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 7, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+        }" aria-label="My Favorite Images">
 
-          <Splide class="row" :options="{
-            arrows: true, pagination: false, direction: 'rtl', type: 'slide', perPage: 7, trimSpace: false, perMove: 1, autoplay: true,
-          }" aria-label="My Favorite Images">
-
-            <SplideSlide v-for="brand in brands">
-              <BrandCard v-bind="brand"></BrandCard>
-            </SplideSlide>
-          </Splide>
-
-        </div>
+          <SplideSlide v-for="brand in brands">
+            <BrandCard v-bind="brand"></BrandCard>
+          </SplideSlide>
+        </Splide>
       </div>
     </section>
-
   </div>
-
 </template>
 
 
@@ -584,6 +577,5 @@ export default {
   border-radius: 20px;
   width: 100%;
   padding: 30px;
-  overflow: hidden;
 }
 </style>
