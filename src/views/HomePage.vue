@@ -14,157 +14,160 @@ defineComponent({
 
 
 <template>
-  <div class="container bv-example-row">
-    <section class="mb-30">
-      <div class="row">
-        <div class="mt-30">
-          <Splide class="row" :options="{
-            arrows: false, pagination: true, direction: 'rtl', type: 'slide', perPage: 1, trimSpace: false, perMove: 1, height: 400, autoplay: true,
-          }" aria-label="My Favorite Images">
-
-            <SplideSlide class="slider" v-for="sliderImg in sliderImgs">
-              <img alt={{alt}} :src="sliderImg.thumbnail">
-            </SplideSlide>
-          </Splide>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-30">
-      <div class="row flex-nowrap flex-lg-wrap overflow-auto">
-        <div class="col-auto col-lg d-flex justify-content-between">
-          <div class="category-card" v-for="miniCart in miniCarts">
-            <MiniCart v-bind="miniCart"></MiniCart>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-30">
-      <div class="row">
-        <div class="carousel-discount d-flex align-items-center">
-
-          <div class="col-lg-3">
-            <div class="d-flex flex-column text-center">
-              <span class="mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24">
-                  <path fill="#fff" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" />
-                  <rect width="2" height="7" x="11" y="6" fill="#fff" rx="1">
-                    <animateTransform attributeName="transform" dur="12s" repeatCount="indefinite" type="rotate"
-                      values="0 12 12;360 12 12" />
-                  </rect>
-                  <rect width="2" height="9" x="11" y="11" fill="#fff" rx="1">
-                    <animateTransform attributeName="transform" dur="2s" repeatCount="indefinite" type="rotate"
-                      values="0 12 12;360 12 12" />
-                  </rect>
-                </svg>
-              </span>
-              <h2 class="carousel-title">زنگ تخفیفه! </h2>
-            </div>
-          </div>
-
-          <div class="col-lg-9">
+  <main>
+    <div class="container bv-example-row">
+      <section class="mb-30">
+        <div class="row">
+          <div class="mt-30">
             <Splide class="row" :options="{
-              arrows: false, pagination: false, direction: 'rtl', type: 'slide', perPage: 4, trimSpace: false, perMove: 1, autoplay: true,
+              arrows: false, pagination: true, direction: 'rtl', type: 'slide', perPage: 1, trimSpace: false, perMove: 1, height: 400, autoplay: true,
             }" aria-label="My Favorite Images">
 
-              <SplideSlide v-for="DiscountedProductsCard in DiscountedProductsCards">
-                <DiscountedProductsCard v-bind="DiscountedProductsCard"></DiscountedProductsCard>
+              <SplideSlide class="slider" v-for="sliderImg in sliderImgs">
+                <img alt={{alt}} :src="sliderImg.thumbnail">
               </SplideSlide>
             </Splide>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="mb-30">
-      <header class="section-header d-flex align-items-center justify-content-between mb-20">
-        <span class="section-title">جدیدترین محصولات</span>
-        <button class="btn">
-          <router-link :to='{ name: "shopPageRoute" }'>
-            دیدن همه
-          </router-link>
-        </button>
-      </header>
-
-      <div class="carousel-content">
-        <Splide class="row" :options="{
-          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
-        }" aria-label="My Favorite Images">
-
-          <SplideSlide v-for="ProductCard in ProductCards">
-            <ProductCard v-bind="ProductCard"></ProductCard>
-          </SplideSlide>
-        </Splide>
-      </div>
-    </section>
-
-    <section class="mb-30">
-      <div class="row">
-        <div class="col-lg-3" v-for="MediumCard in MediumCards">
-          <MediumCard v-bind="MediumCard"></MediumCard>
+      <section class="mb-30">
+        <div class="row flex-nowrap flex-lg-wrap overflow-auto">
+          <div class="col-auto col-lg d-flex justify-content-between">
+            <div class="category-card" v-for="miniCart in miniCarts">
+              <MiniCart v-bind="miniCart"></MiniCart>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="mb-30">
-      <header class="section-header d-flex align-items-center justify-content-between mb-20">
-        <span class="section-title"> لوازم آرایشی و بهداشتی </span>
-        <button class="btn">
-          <router-link :to='{ name: "cosmeticsPageRoute" }'>
-            دیدن همه
-          </router-link>
-        </button>
-      </header>
+      <section class="mb-30">
+        <div class="row">
+          <div class="carousel-discount d-flex align-items-center">
 
-      <div class="carousel-content">
-        <Splide class="row" :options="{
-          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
-        }" aria-label="My Favorite Images">
+            <div class="col-lg-3">
+              <div class="d-flex flex-column text-center">
+                <span class="mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24">
+                    <path fill="#fff"
+                      d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" />
+                    <rect width="2" height="7" x="11" y="6" fill="#fff" rx="1">
+                      <animateTransform attributeName="transform" dur="12s" repeatCount="indefinite" type="rotate"
+                        values="0 12 12;360 12 12" />
+                    </rect>
+                    <rect width="2" height="9" x="11" y="11" fill="#fff" rx="1">
+                      <animateTransform attributeName="transform" dur="2s" repeatCount="indefinite" type="rotate"
+                        values="0 12 12;360 12 12" />
+                    </rect>
+                  </svg>
+                </span>
+                <h2 class="carousel-title">زنگ تخفیفه! </h2>
+              </div>
+            </div>
 
-          <SplideSlide v-for="CosmeticProduct in CosmeticProducts">
-            <ProductCard v-bind="CosmeticProduct"></ProductCard>
-          </SplideSlide>
-        </Splide>
-      </div>
-    </section>
+            <div class="col-lg-9">
+              <Splide class="row" :options="{
+                arrows: false, pagination: false, direction: 'rtl', type: 'slide', perPage: 4, trimSpace: false, perMove: 1, autoplay: true,
+              }" aria-label="My Favorite Images">
 
-    <section class="mb-30">
-      <header class="section-header d-flex align-items-center justify-content-between mb-20">
-        <span class="section-title"> مد و پوشاک روز </span>
-        <button class="btn">
-          <router-link :to='{ name: "fashionPageRoute" }'>
-            دیدن همه
-          </router-link>
-        </button>
-      </header>
+                <SplideSlide v-for="DiscountedProductsCard in DiscountedProductsCards">
+                  <DiscountedProductsCard v-bind="DiscountedProductsCard"></DiscountedProductsCard>
+                </SplideSlide>
+              </Splide>
+            </div>
 
-      <div class="carousel-content">
-        <Splide class="row" :options="{
-          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
-        }" aria-label="My Favorite Images">
+          </div>
+        </div>
+      </section>
 
-          <SplideSlide v-for="fashionProduct in fashionProducts">
-            <ProductCard v-bind="fashionProduct"></ProductCard>
-          </SplideSlide>
-        </Splide>
-      </div>
-    </section>
+      <section class="mb-30">
+        <header class="section-header d-flex align-items-center justify-content-between mb-20">
+          <span class="section-title">جدیدترین محصولات</span>
+          <button class="btn">
+            <router-link :to='{ name: "shopPageRoute" }'>
+              دیدن همه
+            </router-link>
+          </button>
+        </header>
 
-    <section class="mb-30">
-      <div class="carousel-brand">
-        <Splide class="row" :options="{
-          arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 7, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
-        }" aria-label="My Favorite Images">
+        <div class="carousel-content">
+          <Splide class="row" :options="{
+            arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+          }" aria-label="My Favorite Images">
 
-          <SplideSlide v-for="brand in brands">
-            <BrandCard v-bind="brand"></BrandCard>
-          </SplideSlide>
-        </Splide>
-      </div>
-    </section>
-  </div>
+            <SplideSlide v-for="ProductCard in ProductCards">
+              <ProductCard v-bind="ProductCard"></ProductCard>
+            </SplideSlide>
+          </Splide>
+        </div>
+      </section>
+
+      <section class="mb-30">
+        <div class="row">
+          <div class="col-lg-3" v-for="MediumCard in MediumCards">
+            <MediumCard v-bind="MediumCard"></MediumCard>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-30">
+        <header class="section-header d-flex align-items-center justify-content-between mb-20">
+          <span class="section-title"> لوازم آرایشی و بهداشتی </span>
+          <button class="btn">
+            <router-link :to='{ name: "cosmeticsPageRoute" }'>
+              دیدن همه
+            </router-link>
+          </button>
+        </header>
+
+        <div class="carousel-content">
+          <Splide class="row" :options="{
+            arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+          }" aria-label="My Favorite Images">
+
+            <SplideSlide v-for="CosmeticProduct in CosmeticProducts">
+              <ProductCard v-bind="CosmeticProduct"></ProductCard>
+            </SplideSlide>
+          </Splide>
+        </div>
+      </section>
+
+      <section class="mb-30">
+        <header class="section-header d-flex align-items-center justify-content-between mb-20">
+          <span class="section-title"> مد و پوشاک روز </span>
+          <button class="btn">
+            <router-link :to='{ name: "fashionPageRoute" }'>
+              دیدن همه
+            </router-link>
+          </button>
+        </header>
+
+        <div class="carousel-content">
+          <Splide class="row" :options="{
+            arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+          }" aria-label="My Favorite Images">
+
+            <SplideSlide v-for="fashionProduct in fashionProducts">
+              <ProductCard v-bind="fashionProduct"></ProductCard>
+            </SplideSlide>
+          </Splide>
+        </div>
+      </section>
+
+      <section class="mb-30">
+        <div class="carousel-brand">
+          <Splide class="row" :options="{
+            arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 7, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+          }" aria-label="My Favorite Images">
+
+            <SplideSlide v-for="brand in brands">
+              <BrandCard v-bind="brand"></BrandCard>
+            </SplideSlide>
+          </Splide>
+        </div>
+      </section>
+    </div>
+  </main>
 </template>
 
 

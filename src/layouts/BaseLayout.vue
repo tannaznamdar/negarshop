@@ -1,23 +1,21 @@
 <template>
   <div>
     <Navbar />
-    <div >
+    <div>
       <slot />
     </div>
     <Footer />
   </div>
-
 </template>
 
-<style>
-
-</style>
+<style></style>
 
 <script>
 import Navbar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
-  components: { Navbar },
+  components: { Navbar, Footer },
   name: 'BaseLayout'
 }
 </script>
