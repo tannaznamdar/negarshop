@@ -335,8 +335,36 @@ import logo from '../assets/images/logo.png'
                         </div>
                     </div>
                 </section>
+
+                <section>
+                    <ul class="fixed-bottom-bar">
+                        <li>
+                            <button class="bottom-bar" type="button" aria-label="مقایسه" data-toggle="tooltip"
+                                data-placement="top" title="" data-original-title="مقایسه">
+                                <font-awesome-icon icon="shuffle" />
+                            </button>
+                        </li>
+                        <li>
+                            <button class="bottom-bar" type="button">
+                                <font-awesome-icon icon="heart" />
+                            </button>
+                        </li>
+                        <li>
+                            <button class="bottom-bar" type="button">
+                                <font-awesome-icon icon="cart-shopping" />
+                            </button>
+                        </li>
+                        <li>
+                            <button class="bottom-bar" type="button">
+                                <font-awesome-icon icon="angle-up" />
+                            </button>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </footer>
+
+
     </div>
 </template>
 
@@ -359,7 +387,6 @@ export default {
                     thumbnail: 'https://demo.coderboy.ir/negarshop/wp-content/uploads/2020/07/50a7c6fb.png',
                     alt: 'logo-2'
                 }
-
             ]
         }
     }
@@ -519,5 +546,37 @@ ul {
 .logo-img {
     width: 90%;
     height: auto;
+}
+
+.fixed-bottom-bar {
+    position: fixed;
+    bottom: 20px;
+    margin: 0 -70px 0 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+    z-index: 999;
+}
+
+.bottom-bar {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 0;
+    font-size: 18px;
+    display: block;
+    padding: 0;
+    background: #fff;
+    color: #757575;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 3px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-bottom: 5px;
+    transition: .2s;
+
+    &:is(:hover, :focus) {
+       color: #495057;
+    }
 }
 </style>
