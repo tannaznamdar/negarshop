@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
-    <header>
+
+    <!-- header/lg -->
+    <header class="header responsive-header-lg">
       <div class="container">
         <div class="row align-items-center">
           <div class="mt-10 d-flex">
@@ -181,9 +183,6 @@
                   <li>
                     <router-link class="active" :to='{ name: "childPageRoute" }'> کودک و نوزاد </router-link>
                   </li>
-
-
-
                 </ul>
               </nav>
             </div>
@@ -230,6 +229,47 @@
         </div>
       </div>
     </header>
+
+    <!-- header/mobile -->
+    <section class="header responsive-header-mobile">
+      <div class="container">
+        <div class="row mt-10">
+          <div class="d-flex justify-content-between align-items-center">
+
+            <div class="col-1 text-center">
+              <button class="button-transparent" @click="showMenu = true">
+                <img alt="menu" :src="mobileMenu">
+              </button>
+            </div>
+
+            <div class="col-2">
+              <div class="p-10 text-center">
+                <router-link to="/"><img class="logo-img menu-icon" :src="logo" alt="logo"></router-link>
+              </div>
+            </div>
+
+            <div class="col-8"></div>
+
+            <div class="col-1">
+              <button class="button-transparent" @click="showBlog = true">
+                <font-awesome-icon class="wifi-icon" icon="wifi" rotation=45 />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- mobileMenu -->
+    <transition name="slide-mobile-menu">
+      <section class="mobile-menu mobile-menu-container" v-if="showMenu">
+        <div class="mask" style="display: block;" @click="showMenu = false"></div>
+        <div class="mobile-menu-container">
+
+        </div>
+      </section>
+    </transition>
+
   </div>
 </template>
 
@@ -239,6 +279,7 @@
 import logo from '../assets/images/logo.png'
 import login from '../assets/images/login.jpg'
 import shoppingCart from '../assets/images/bc6a97c7.svg'
+import mobileMenu from '../assets/images/mobile-menu.svg'
 
 export default {
   name: 'navbar',
@@ -246,6 +287,7 @@ export default {
   data() {
     return {
       logo,
+      mobileMenu,
       modalBox: false,
       shoppingCartMenu: false,
 
@@ -328,6 +370,10 @@ export default {
 .logo-img {
   width: 80%;
   height: auto;
+
+  @media (min-width:450px) and (max-width:820px) {
+    width: 110%;
+  }
 }
 
 .color-gray {
@@ -682,7 +728,7 @@ export default {
   font-size: 13px;
   border-radius: 20px;
   padding: 10px;
-  color: #495057;
+  color: #7777;
   height: auto;
   width: 100%;
   outline: none;
@@ -742,5 +788,41 @@ export default {
   text-align: center;
   padding: 110px 15px 0 15px;
   color: #666;
+}
+
+.button-transparent {
+  border: none;
+  outline: none;
+
+  img {
+    width: 34px;
+  }
+}
+
+.wifi-icon {
+  font-size: 20px;
+  rotate: 45deg;
+  color: #777;
+}
+
+//responsive
+.responsive-header-lg {
+  display: block;
+}
+
+.responsive-header-lg {
+  @media (max-width:820px) {
+    display: none;
+  }
+}
+
+.responsive-header-mobile {
+  display: none;
+}
+
+.responsive-header-mobile {
+  @media (max-width:820px) {
+    display: block;
+  }
 }
 </style>
