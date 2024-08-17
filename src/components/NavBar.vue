@@ -255,7 +255,6 @@
                 <router-link :to='{ name: "blogPageRoute" }'>
                   <font-awesome-icon class="wifi-icon" icon="wifi" rotation=45 />
                 </router-link>
-
               </button>
             </div>
           </div>
@@ -392,6 +391,12 @@ export default {
 
 
 <style scoped lang="scss">
+.container {
+  @media (max-width:820px) {
+    min-width: 98%;
+  }
+}
+
 .logo-img {
   width: 80%;
   height: auto;

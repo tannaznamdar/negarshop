@@ -20,7 +20,12 @@ defineComponent({
         <div class="row">
           <div class="mt-30">
             <Splide class="row" :options="{
-              arrows: false, pagination: true, direction: 'rtl', type: 'slide', perPage: 1, trimSpace: false, perMove: 1, height: 400, autoplay: true,
+              arrows: false, pagination: true, direction: 'rtl', type: 'slide', perPage: 1, trimSpace: false, perMove: 1, height: 400, autoplay: true, gap: 10,
+              breakpoints: {
+                1200: { height: 400 },
+                820: { height: 300 },
+                449: { height: 200 },
+              },
             }" aria-label="My Favorite Images">
 
               <SplideSlide class="slider" v-for="sliderImg in sliderImgs">
@@ -30,22 +35,26 @@ defineComponent({
           </div>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <div class="row flex-nowrap flex-lg-wrap overflow-auto">
-          <div class="col-auto col-lg d-flex justify-content-between">
+          <div class="col-auto col-lg d-flex justify-content-between gap-2">
             <div class="category-card" v-for="miniCart in miniCarts">
               <MiniCart v-bind="miniCart"></MiniCart>
             </div>
           </div>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <div class="row">
           <div class="carousel-discount d-flex align-items-center">
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 ">
               <div class="d-flex flex-column text-center">
                 <span class="mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24">
@@ -65,9 +74,14 @@ defineComponent({
               </div>
             </div>
 
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-9">
               <Splide class="row" :options="{
                 arrows: false, pagination: false, direction: 'rtl', type: 'slide', perPage: 4, trimSpace: false, perMove: 1, autoplay: true,
+                breakpoints: {
+                  1200: { perPage: 4 },
+                  820: { perPage: 2.5 },
+                  449: { perPage: 1 },
+                }
               }" aria-label="My Favorite Images">
 
                 <SplideSlide v-for="DiscountedProductsCard in DiscountedProductsCards">
@@ -79,7 +93,9 @@ defineComponent({
           </div>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <header class="section-header d-flex align-items-center justify-content-between mb-20">
           <span class="section-title">جدیدترین محصولات</span>
@@ -93,6 +109,11 @@ defineComponent({
         <div class="carousel-content">
           <Splide class="row" :options="{
             arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+            breakpoints: {
+              1200: { perPage: 4.5 },
+              820: { perPage: 3.25 },
+              449: { perPage: 1 },
+            }
           }" aria-label="My Favorite Images">
 
             <SplideSlide v-for="ProductCard in ProductCards">
@@ -101,15 +122,19 @@ defineComponent({
           </Splide>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <div class="row">
-          <div class="col-lg-3" v-for="MediumCard in MediumCards">
+          <div class="col-lg-3 col-md-3" v-for="MediumCard in MediumCards">
             <MediumCard v-bind="MediumCard"></MediumCard>
           </div>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <header class="section-header d-flex align-items-center justify-content-between mb-20">
           <span class="section-title"> لوازم آرایشی و بهداشتی </span>
@@ -123,6 +148,11 @@ defineComponent({
         <div class="carousel-content">
           <Splide class="row" :options="{
             arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+            breakpoints: {
+              1200: { perPage: 4.5 },
+              820: { perPage: 3.25 },
+              449: { perPage: 1 },
+            }
           }" aria-label="My Favorite Images">
 
             <SplideSlide v-for="CosmeticProduct in CosmeticProducts">
@@ -131,7 +161,9 @@ defineComponent({
           </Splide>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <header class="section-header d-flex align-items-center justify-content-between mb-20">
           <span class="section-title"> مد و پوشاک روز </span>
@@ -145,6 +177,11 @@ defineComponent({
         <div class="carousel-content">
           <Splide class="row" :options="{
             arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 4.5, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+            breakpoints: {
+              1200: { perPage: 4.5 },
+              820: { perPage: 3.25 },
+              449: { perPage: 1 },
+            }
           }" aria-label="My Favorite Images">
 
             <SplideSlide v-for="fashionProduct in fashionProducts">
@@ -153,11 +190,18 @@ defineComponent({
           </Splide>
         </div>
       </section>
+    </div>
 
+    <div class="container bv-example-row">
       <section class="mb-30">
         <div class="carousel-brand">
           <Splide class="row" :options="{
             arrows: true, pagination: false, interval: '4000', direction: 'rtl', type: 'slide', perPage: 7, trimSpace: true, perMove: 1, autoplay: true, rewind: true,
+            breakpoints: {
+              1200: { perPage: 7 },
+              820: { perPage: 4 },
+              449: { perPage: 2 },
+            }
           }" aria-label="My Favorite Images">
 
             <SplideSlide v-for="brand in brands">
@@ -167,6 +211,7 @@ defineComponent({
         </div>
       </section>
     </div>
+
   </main>
 </template>
 
@@ -503,6 +548,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.container {
+  @media (max-width:820px) {
+    min-width: 98%;
+  }
+}
+
 .mt-30 {
   margin-top: 30px;
 }
@@ -540,12 +591,17 @@ export default {
   border-radius: 20px;
   width: 100%;
   padding: 10px;
+  overflow: hidden;
 }
 
 .carousel-title {
   color: #FFFFFF;
   font-size: 32px;
   line-height: 1;
+
+  @media (min-width:450px) and (max-width:820px) {
+    font-size: 22px;
+  }
 }
 
 .section-title {

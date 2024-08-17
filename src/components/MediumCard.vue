@@ -32,6 +32,10 @@ export default {
 .card-thumbnail {
     height: 230px;
     width: 100%;
+
+    @media (min-width:450px) and (max-width:820px) {
+        height: 135px;
+    }
 }
 
 .card-img {
