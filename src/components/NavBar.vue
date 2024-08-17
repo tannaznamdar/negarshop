@@ -208,9 +208,9 @@
             </div>
           </div>
 
-          <transition name="slide-shopping_cart">
+          <transition name="slide-transition">
             <div v-if="shoppingCartMenu" class="shopping_cart">
-              <div class="fixed_back-cart" @click="shoppingCartMenu = false"></div>
+              <div class="mask" @click="shoppingCartMenu = false"></div>
               <div class="p-30 shopping_cart">
                 <button class="close-btn" @click="shoppingCartMenu = false">
                   <span class="color-gray font-18">
@@ -251,8 +251,11 @@
             <div class="col-8"></div>
 
             <div class="col-1">
-              <button class="button-transparent" @click="showBlog = true">
-                <font-awesome-icon class="wifi-icon" icon="wifi" rotation=45 />
+              <button class="button-transparent">
+                <router-link :to='{ name: "blogPageRoute" }'>
+                  <font-awesome-icon class="wifi-icon" icon="wifi" rotation=45 />
+                </router-link>
+
               </button>
             </div>
           </div>
@@ -261,11 +264,23 @@
     </section>
 
     <!-- mobileMenu -->
-    <transition name="slide-mobile-menu">
+    <transition name="slide-transition">
       <section class="mobile-menu mobile-menu-container" v-if="showMenu">
-        <div class="mask" style="display: block;" @click="showMenu = false"></div>
+        <div class="mask" @click="showMenu = false"></div>
         <div class="mobile-menu-container">
-
+          <nav class="mobile-menu">
+            <ul>
+              <li>
+                <router-link :to='{ name: "shopPageRoute" }' @click="showMenu = false"> آرشیو محصولات </router-link>
+              </li>
+              <li>
+                <router-link :to='{ name: "brandsPageRoute" }' @click="showMenu = false">برندها </router-link>
+              </li>
+              <li>
+                <router-link :to='{ name: "myAccountPageRoute" }' @click="showMenu = false">حساب من </router-link>
+              </li>
+            </ul>
+          </nav>
         </div>
       </section>
     </transition>
@@ -286,10 +301,11 @@ export default {
 
   data() {
     return {
-      logo,
-      mobileMenu,
+      logo, mobileMenu, shoppingCart, login,
+
       modalBox: false,
       shoppingCartMenu: false,
+      showMenu: false,
 
       DigitalGoods: [
         {
@@ -361,6 +377,15 @@ export default {
         }
       ]
     }
+  },
+  watch: {
+    showMenu(val) {
+      if (val) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    },
   }
 }
 </script>
@@ -666,11 +691,11 @@ export default {
   overflow-y: auto;
 }
 
-.fixed_back-cart {
+.mask {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgb(10 10 10 / 30%);
+  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   right: 0;
   z-index: 40;
@@ -768,19 +793,19 @@ export default {
   background-color: #fff;
 }
 
-.slide-shopping_cart-enter {
+.slide-transition-enter {
   transform: translateX(350px);
 }
 
-.slide-shopping_cart-enter-active {
+.slide-transition-enter-active {
   transition: all .5s ease-in;
 }
 
-.slide-shopping_cart-leave-active {
+.slide-transition-leave-active {
   transition: all .5s ease-in;
 }
 
-.slide-shopping_cart-leave-to {
+.slide-transition-leave-to {
   transform: translateX(350px);
 }
 
@@ -788,21 +813,6 @@ export default {
   text-align: center;
   padding: 110px 15px 0 15px;
   color: #666;
-}
-
-.button-transparent {
-  border: none;
-  outline: none;
-
-  img {
-    width: 34px;
-  }
-}
-
-.wifi-icon {
-  font-size: 20px;
-  rotate: 45deg;
-  color: #777;
 }
 
 //responsive
@@ -823,6 +833,76 @@ export default {
 .responsive-header-mobile {
   @media (max-width:820px) {
     display: block;
+  }
+}
+
+//mobile-menu
+.button-transparent {
+  border: none;
+  outline: none;
+
+  img {
+    width: 34px;
+  }
+}
+
+.wifi-icon {
+  font-size: 20px;
+  rotate: 45deg;
+  color: #777;
+}
+
+.mobile-menu-container {
+  position: absolute;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, .13);
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  z-index: 9999;
+  background-color: #FFF;
+  overflow: hidden;
+}
+
+.mobile-menu {
+  display: block;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    padding-top: 20px;
+
+    li {
+      display: block;
+      padding: 12px 0;
+      padding-right: 24px;
+      line-height: 18px;
+      transition: 0.3s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      a {
+        text-decoration: none;
+        color: #666;
+        font-weight: 500;
+        font-size: 14px;
+
+        &:is(:hover, :active) {
+          color: #000;
+        }
+      }
+
+      &:is(:hover, :active) {
+        background-color: #f5f5f5;
+        color: #000;
+      }
+    }
   }
 }
 </style>

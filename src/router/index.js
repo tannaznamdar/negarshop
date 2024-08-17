@@ -10,6 +10,9 @@ import Fav from "@/views/FavPage.vue";
 import Child from "@/views/ChildPage.vue";
 import Product from "@/views/ProductPage.vue";
 import Shop from "@/views/StorePage.vue";
+import MyAccount from "@/views/MyAccountPage.vue";
+import Brands from "@/views/BrandsPage.vue";
+import Blog from "@/views/BlogPage.vue";
 
 
 const router = createRouter({
@@ -26,6 +29,9 @@ const router = createRouter({
     { path: "/negarshop/my-account/negar-favs", name: 'favPageRoute', component: Fav },
     { path: "/Product/:slug", name: 'productPageRoute', component: Product },
     { path: "/shop", name: 'shopPageRoute', component: Shop },
+    { path: "/myAccount", name: 'myAccountPageRoute', component: MyAccount },
+    { path: "/brands", name: 'brandsPageRoute', component: Brands },
+    { path: "/blog", name: 'blogPageRoute', component: Blog },
     { path: "/:catchAll(.*)", redirect: '/' }
   ],
 
