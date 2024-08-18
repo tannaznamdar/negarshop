@@ -236,21 +236,21 @@
         <div class="row mt-10">
           <div class="d-flex justify-content-between align-items-center">
 
-            <div class="col-1 text-center">
+            <div class="col-md-1 col-2 text-center">
               <button class="button-transparent" @click="showMenu = true">
                 <img alt="menu" :src="mobileMenu">
               </button>
             </div>
 
-            <div class="col-2">
+            <div class="col-md-2 col-2">
               <div class="p-10 text-center">
                 <router-link to="/"><img class="logo-img menu-icon" :src="logo" alt="logo"></router-link>
               </div>
             </div>
 
-            <div class="col-8"></div>
+            <div class="col-md-8 col-7"></div>
 
-            <div class="col-1">
+            <div class="col-md-1 col-1">
               <button class="button-transparent">
                 <router-link :to='{ name: "blogPageRoute" }'>
                   <font-awesome-icon class="wifi-icon" icon="wifi" rotation=45 />
@@ -392,7 +392,7 @@ export default {
 
 <style scoped lang="scss">
 .container {
-  @media (max-width:820px) {
+  @media (min-width:450px) and (max-width:820px) {
     min-width: 98%;
   }
 }
@@ -403,6 +403,10 @@ export default {
 
   @media (min-width:450px) and (max-width:820px) {
     width: 110%;
+  }
+
+  @media (max-width:449px) {
+    width: 250%;
   }
 }
 
@@ -823,9 +827,7 @@ export default {
 //responsive
 .responsive-header-lg {
   display: block;
-}
 
-.responsive-header-lg {
   @media (max-width:820px) {
     display: none;
   }
@@ -833,9 +835,7 @@ export default {
 
 .responsive-header-mobile {
   display: none;
-}
 
-.responsive-header-mobile {
   @media (max-width:820px) {
     display: block;
   }

@@ -24,7 +24,7 @@ defineComponent({
               breakpoints: {
                 1200: { height: 400 },
                 820: { height: 300 },
-                449: { height: 200 },
+                449: { height: 200, pagination: false },
               },
             }" aria-label="My Favorite Images">
 
@@ -54,7 +54,7 @@ defineComponent({
         <div class="row">
           <div class="carousel-discount d-flex align-items-center">
 
-            <div class="col-lg-3 col-md-3 ">
+            <div class="col-lg-3 col-md-3 display-responsive">
               <div class="d-flex flex-column text-center">
                 <span class="mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24">
@@ -74,13 +74,13 @@ defineComponent({
               </div>
             </div>
 
-            <div class="col-lg-9 col-md-9">
+            <div class="col-lg-9 col-md-9 col-12 padding-respansive">
               <Splide class="row" :options="{
                 arrows: false, pagination: false, direction: 'rtl', type: 'slide', perPage: 4, trimSpace: false, perMove: 1, autoplay: true,
                 breakpoints: {
                   1200: { perPage: 4 },
                   820: { perPage: 2.5 },
-                  449: { perPage: 1 },
+                  449: { perPage: 1.5 },
                 }
               }" aria-label="My Favorite Images">
 
@@ -112,7 +112,7 @@ defineComponent({
             breakpoints: {
               1200: { perPage: 4.5 },
               820: { perPage: 3.25 },
-              449: { perPage: 1 },
+              449: { perPage: 1.5 },
             }
           }" aria-label="My Favorite Images">
 
@@ -124,7 +124,7 @@ defineComponent({
       </section>
     </div>
 
-    <div class="container bv-example-row">
+    <div class="container bv-example-row display-responsive">
       <section class="mb-30">
         <div class="row">
           <div class="col-lg-3 col-md-3" v-for="MediumCard in MediumCards">
@@ -151,7 +151,7 @@ defineComponent({
             breakpoints: {
               1200: { perPage: 4.5 },
               820: { perPage: 3.25 },
-              449: { perPage: 1 },
+              449: { perPage: 1.5 },
             }
           }" aria-label="My Favorite Images">
 
@@ -180,7 +180,7 @@ defineComponent({
             breakpoints: {
               1200: { perPage: 4.5 },
               820: { perPage: 3.25 },
-              449: { perPage: 1 },
+              449: { perPage: 1.5 },
             }
           }" aria-label="My Favorite Images">
 
@@ -549,8 +549,12 @@ export default {
 
 <style scoped lang="scss">
 .container {
-  @media (max-width:820px) {
+  @media (min-width:450px) and (max-width:820px) {
     min-width: 98%;
+  }
+
+  @media (max-width:449px) {
+    max-width: 95%;
   }
 }
 
@@ -573,10 +577,18 @@ export default {
 .slider {
   overflow: hidden;
   border-radius: 20px;
+  position: relative;
+  display: block;
+  width: auto;
+  height: 100%;
 
   img {
-    width: 100%;
-    height: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
   }
 }
 
@@ -636,5 +648,18 @@ export default {
   border-radius: 20px;
   width: 100%;
   padding: 30px;
+}
+
+//responsive
+.display-responsive {
+  @media (max-width:449px) {
+    display: none;
+  }
+}
+
+.padding-respansive {
+  @media (max-width:820px) {
+    padding: 0 10px;
+  }
 }
 </style>
