@@ -1,6 +1,7 @@
 <script setup>
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo.png';
+
 </script>
 
 <template>
@@ -994,13 +995,12 @@ import logo from '../assets/images/logo.png'
                     </div>
                 </section>
 
-                <section>
+                <section class="mb-5 pb-5">
                     <p class="title-13 title ">تمامی مطالب، عکس ها و… مطعلق به سایت نگارشاپ می باشد. طراح: پسرک کدنویس
                     </p>
                 </section>
             </div>
         </footer>
-
     </div>
 </template>
 

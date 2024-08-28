@@ -13,6 +13,7 @@ import Shop from "@/views/StorePage.vue";
 import MyAccount from "@/views/MyAccountPage.vue";
 import Brands from "@/views/BrandsPage.vue";
 import Blog from "@/views/BlogPage.vue";
+import Cart from "@/views/CartPage.vue";
 
 
 const router = createRouter({
@@ -32,6 +33,7 @@ const router = createRouter({
     { path: "/myAccount", name: 'myAccountPageRoute', component: MyAccount },
     { path: "/brands", name: 'brandsPageRoute', component: Brands },
     { path: "/blog", name: 'blogPageRoute', component: Blog },
+    { path: "/cart", name: 'cartPageRoute', component: Cart },
     { path: "/:catchAll(.*)", redirect: '/' }
   ],
 

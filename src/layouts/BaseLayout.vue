@@ -5,6 +5,7 @@
       <slot />
     </div>
     <Footer />
+    <MobileMenubar/>
   </div>
 </template>
 
@@ -13,9 +14,10 @@
 <script>
 import Navbar from "../components/NavBar.vue";
 import Footer from "../components/Footer.vue";
+import MobileMenubar from '../components/MobileMenubar.vue';
 
 export default {
-  components: { Navbar, Footer },
+  components: { Navbar, Footer, MobileMenubar },
   name: 'BaseLayout'
 }
 </script>
