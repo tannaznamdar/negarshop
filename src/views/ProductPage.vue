@@ -1,5 +1,10 @@
 <template>
-    <h1>product</h1>
+    <div>
+        <nav>
+            <router-link  :to='{ name: "homePageRoute" }'>خانه</router-link>
+            <span> / </span>
+        </nav>
+    </div>
 </template>
 
 

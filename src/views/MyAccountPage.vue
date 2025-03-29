@@ -1,5 +1,9 @@
 <template>
+  
+  <div class="container page-container">
     <h1> MyAccount </h1>
+   </div>
+
 </template>
 
 
@@ -18,4 +22,9 @@ export default {
 </script>
 
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.page-container {
+    margin-top: 50px;
+    height: 100vh;
+}
+</style>

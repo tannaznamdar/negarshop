@@ -71,7 +71,7 @@
                       </form>
                     </div>
 
-                    <div class="d-flex mb-5">
+                    <div class="d-flex mb-5 align-items-center">
                       <span class="font-14">برای ورود و عضویت فقط شماره موبایل کافی است. </span>
                       <button type="submit" class="login-btn">
                         ادامه
@@ -385,6 +385,22 @@ export default {
         document.body.style.overflow = 'auto';
       }
     },
+
+    shoppingCartMenu(val) {
+    if (val) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  },
+
+  modalBox(val) {
+    if (val) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }
   }
 }
 </script>
@@ -479,6 +495,7 @@ export default {
 }
 
 .user-icon {
+  line-height: normal;
   height: 50px;
   width: 50px;
   font-size: 18px;
@@ -669,6 +686,7 @@ export default {
 }
 
 .cart-count {
+  font-size: 12px;
   margin-right: 10px;
   background-color: #fff;
   color: #666666;
@@ -774,6 +792,7 @@ export default {
 }
 
 .login-btn {
+  line-height: normal;
   background-color: #651fff;
   color: #fff;
   border-radius: 20px;
